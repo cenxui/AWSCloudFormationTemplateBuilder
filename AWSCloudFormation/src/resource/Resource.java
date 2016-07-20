@@ -27,12 +27,4 @@ public class Resource implements Componentable{
 	public String toComponent() {
 		return "{\"Resources\":{\"" + mResourceName + "\":" + mComponentable.toComponent() + "}}";
 	}
-	
-	
-	
-//	if (SecurityGroupName == null || SecurityGroupName.length() == 0) {
-
-//}
-//"{\"Resources\":{\""+ SecurityGroupName + "\":" + new Gson().toJson(this)+"}}";
-	
 }

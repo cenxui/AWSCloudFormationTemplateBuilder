@@ -9,6 +9,14 @@ import com.google.gson.Gson;
 
 import resource.Componentable;
 
+/**
+ * This class is to build the security properties in JSON format
+ * implement Componentable is to make component properties result to
+ * add in Resouce format. 
+ * @author xenxui
+ *
+ */
+
 final class SecurityGroup implements Componentable {
 	public static final String TCP = "tcp";
 	
