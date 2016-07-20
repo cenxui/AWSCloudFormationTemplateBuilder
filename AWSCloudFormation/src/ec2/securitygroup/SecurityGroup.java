@@ -1,4 +1,4 @@
-package ec2;
+package ec2.securitygroup;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,9 @@ import javax.management.RuntimeErrorException;
 
 import com.google.gson.Gson;
 
-public final class SecurityGroup {
+import resource.Componentable;
+
+final class SecurityGroup implements Componentable {
 	public static final String TCP = "tcp";
 	
 	public final String Type = "AWS::EC2::SecurityGroup";
@@ -30,10 +32,6 @@ public final class SecurityGroup {
 	
 	public final void setGroupDescription(String description) {
 		Properties.GroupDescription = description;
-	}
-	
-	public final String getGroupDescription() {
-		return Properties.GroupDescription;
 	}
 	
 	public final OutBoundRule setSecurityGroupEgress() {
@@ -63,7 +61,7 @@ public final class SecurityGroup {
 		return this;
 	}
 	
-	public final String toJson() {
+	public final String toComponent() {
 		if (Properties.GroupDescription == null) {
 			throw new RuntimeErrorException(null,"GroupDescription can not be null");
 		}
