@@ -7,6 +7,7 @@ import javax.management.RuntimeErrorException;
 
 import com.google.gson.Gson;
 
+import intrinsic.Ref;
 import resource.Componentable;
 
 /**
@@ -35,7 +36,8 @@ final class SecurityGroup implements Componentable {
 		if (Properties.VpcId != null) {
 			throw new RuntimeErrorException(null, "You can only either setVpcId or setVpcRf for once");
 		}
-		((VpcId)Properties.VpcId).ref = rf;
+		Properties.VpcId = new Ref();
+		((Ref)Properties.VpcId).setRef(rf);
 	}
 	
 	public final void setGroupDescription(String description) {
@@ -263,10 +265,5 @@ final class SecurityGroup implements Componentable {
 				throw new RuntimeErrorException(null, "Error ToPort range");
 			}
 		}
-	}
-	
-	private class VpcId {
-		@SuppressWarnings("unused")
-		Object ref;
 	}
 }

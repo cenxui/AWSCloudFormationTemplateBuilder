@@ -1,6 +1,5 @@
 package ec2;
 
-import resource.Componentable;
 import resource.Resource;
 import resource.Tagable;
 
@@ -8,124 +7,124 @@ public class Instances extends Resource implements Tagable, SsmAssociationable,
 	SecurityGroupable, SecurityGroupIdable, NetworkInterfaceable,
 	BlockDeviceMappingable {
 	
-	private Instance instance;
-	private Instances(Componentable component) {
+	private final Instance mInstance;
+	private Instances(Instance component) {
 		super(component);
+		mInstance = component;
 	}
 	
 	public static Instances getInstances() {
-		Instance instance = new Instance();
-		Instances instances = new Instances(instance);
-		instances.instance = instance;
+		final Instance instance = new Instance();
+		final Instances instances = new Instances(instance);
 		return instances;
 	}
 	
 	public void setAffinity(String affinity) {
-		instance.setAffinity(affinity);
+		mInstance.setAffinity(affinity);
 	}
 
 	public void setAvailabilityZone(String availabilityZone) {
-		instance.setAvailabilityZone(availabilityZone);
+		mInstance.setAvailabilityZone(availabilityZone);
 	}
 
 	public BlockDeviceMappingable setBlockDeviceMapping(String blockDeviceMapping) {
-		instance.setBlockDeviceMapping(blockDeviceMapping);
+		mInstance.setBlockDeviceMapping(blockDeviceMapping);
 		return this;
 	}
 
 	public void setDisableApiTermination(boolean disableApiTermination) {
-		instance.setDisableApiTermination(disableApiTermination);
+		mInstance.setDisableApiTermination(disableApiTermination);
 	}
 
 	public void setEbsOptimized(boolean ebsOptimized) {
-		instance.setEbsOptimized(ebsOptimized);
+		mInstance.setEbsOptimized(ebsOptimized);
 	}
 
 	public void setHostId(String hostId) {
-		instance.setHostId(hostId);
+		mInstance.setHostId(hostId);
 	}
 	
 	public void setIamInstanceProfile(String iamInstanceProfile) {
-		instance.setIamInstanceProfile(iamInstanceProfile);
+		mInstance.setIamInstanceProfile(iamInstanceProfile);
 	}
 
 	public void setImageId(String imageId) {
-		instance.setImageId(imageId);
+		mInstance.setImageId(imageId);
 	}
 
 	public void setInstanceInitiatedShutdownBehavior(String instanceInitiatedShutdownBehavior) {
-		instance.setInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
+		mInstance.setInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
 	}
 	
 	public void setInstanceType(String instanceType) {
-		instance.setInstanceType(instanceType);
+		mInstance.setInstanceType(instanceType);
 	}
 
 	public void setKernelId(String kernelId) {
-		instance.setKernelId(kernelId);
+		mInstance.setKernelId(kernelId);
 	}
 
 	public void setKeyName(String keyName) {
-		instance.setKeyName(keyName);
+		mInstance.setKeyName(keyName);
 	}
 
 	public void setMonitoring(Boolean monitoring) {
-		instance.setMonitoring(monitoring);
+		mInstance.setMonitoring(monitoring);
 	}
 
 	public NetworkInterfaceable setNetworkInterface(String networkInterface) {
-		instance.setNetworkInterface(networkInterface);
+		mInstance.setNetworkInterface(networkInterface);
 		return this;
 	}
 
 	public void setPlacementGroupName(String placementGroupName) {
-		instance.setPlacementGroupName(placementGroupName);
+		mInstance.setPlacementGroupName(placementGroupName);
 	}
 
 	public void setPrivateIpAddress(String privateIpAddress) {
-		instance.setPrivateIpAddress(privateIpAddress);
+		mInstance.setPrivateIpAddress(privateIpAddress);
 	}
 
 	public void setRamdiskId(String ramdiskId) {
-		instance.setRamdiskId(ramdiskId);
+		mInstance.setRamdiskId(ramdiskId);
 	}
 
 	public SecurityGroupIdable setSecurityGroupId(String securityGroupId) {
-		instance.setSecurityGroupId(securityGroupId);
+		mInstance.setSecurityGroupId(securityGroupId);
 		return this;
 	}
 
 	public SecurityGroupable setSecurityGroup(String securityGroup) {
-		instance.setSecurityGroup(securityGroup);
+		mInstance.setSecurityGroup(securityGroup);
 		return this;
 	}
 
 	public void setSourceDestCheck(boolean sourceDestCheck) {
-		instance.setSourceDestCheck(sourceDestCheck);
+		mInstance.setSourceDestCheck(sourceDestCheck);
 	}
 
 	public SsmAssociationable setSsmAssociation(String ssmAssociation) {
-		instance.setSsmAssociation(ssmAssociation);
+		mInstance.setSsmAssociation(ssmAssociation);
 		return this;
 	}
 
 	public void setSubnetId(String subnetId) {
-		instance.setSubnetId(subnetId);
+		mInstance.setSubnetId(subnetId);
 	}
 	public Tagable setTag(String tags) {
-		instance.setTag(tags);
+		mInstance.setTag(tags);
 		return this;
 	}
 	public void setTenancy(String tenancy) {
-		instance.setTenancy(tenancy);
+		mInstance.setTenancy(tenancy);
 	}
 	public void setUserData(String userData) {
-		instance.setUserData(userData);
+		mInstance.setUserData(userData);
 	}
 	public void setVolumes(String volumes) {
-		instance.setVolumes(volumes);
+		mInstance.setVolumes(volumes);
 	}
 	public void setAdditionalInfo(String additionalInfo) {
-		instance.setAdditionalInfo(additionalInfo);
+		mInstance.setAdditionalInfo(additionalInfo);
 	}
 }

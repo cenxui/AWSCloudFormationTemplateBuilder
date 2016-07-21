@@ -14,14 +14,17 @@ class Role implements Componentable{
 	private final Properties Properties = new Properties();
 
 	private class Properties {
-		Gson AssumeRolePolicyDocument;
+		String AssumeRolePolicyDocument;
+		@SuppressWarnings("unused")
 		String ManagedPolicyArns;
+		@SuppressWarnings("unused")
 		String Path;
 		List<String> Policies;
+		@SuppressWarnings("unused")
 		String RoleName;		
 	}
 	
-	public void setAssumeRolePolicyDocument(Gson assumeRolePolicyDocument) {
+	public void setAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
 		Properties.AssumeRolePolicyDocument = assumeRolePolicyDocument;
 	}
 	
@@ -33,11 +36,12 @@ class Role implements Componentable{
 		Properties.Path = path;
 	}
 	
-	public void setPolicies(String policy) {
+	public Role setPolicies(String policy) {
 		if (Properties.Policies == null) {
 			Properties.Policies = new ArrayList<>();
 		}
-		 = policies;
+		Properties.Policies.add(policy) ;
+		return this;
 	}
 	
 	public void setRoleName(String roleName) {
