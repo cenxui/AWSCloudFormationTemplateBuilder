@@ -4,8 +4,15 @@ import ec2.securitygroup.SecurityGroup.InBoundRule;
 import ec2.securitygroup.SecurityGroup.OutBoundRule;
 import resource.Componentable;
 import resource.Resource;
+import resource.Tagable;
 
-public class SecurityGroups extends Resource{
+/**
+ * 
+ * @author xenxui
+ *
+ */
+
+public class SecurityGroups extends Resource implements Tagable{
 	private SecurityGroup mSecurityGroup;
 	
 	private SecurityGroups(Componentable component) {
@@ -19,6 +26,11 @@ public class SecurityGroups extends Resource{
 		return securityGroups;		 
 	}
 	
+	/**
+	 * set the description of group, can not be null
+	 * @param description
+	 */
+	
 	public void setGroupDescription(String description) {
 		mSecurityGroup.setGroupDescription(description);
 	}
@@ -31,7 +43,7 @@ public class SecurityGroups extends Resource{
 		return mSecurityGroup.setSecurityGroupIngress();
 	}
 	
-	public SecurityGroups setTag(String tag) {
+	public Tagable setTag(String tag) {
 		mSecurityGroup.setTag(tag);
 		return this;
 	}

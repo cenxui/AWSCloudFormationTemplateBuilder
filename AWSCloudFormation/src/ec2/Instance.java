@@ -73,10 +73,11 @@ public class Instance implements Componentable{
 		Properties.AvailabilityZone = availabilityZone;
 	}
 
-	public Instance setBlockDeviceMappings(String blockDeviceMapping) {
+	public Instance setBlockDeviceMapping(String blockDeviceMapping) {
 		if (Properties.BlockDeviceMappings == null) {
 			Properties.BlockDeviceMappings = new ArrayList<>();
 		}
+		Properties.BlockDeviceMappings.add(blockDeviceMapping);		
 		return this;
 	}
 
@@ -120,10 +121,11 @@ public class Instance implements Componentable{
 		Properties.Monitoring = monitoring;
 	}
 
-	public Instance setNetworkInterfaces(String networkInterface) {
+	public Instance setNetworkInterface(String networkInterface) {
 		if (Properties.NetworkInterfaces == null) {
 			Properties.NetworkInterfaces = new ArrayList<>();
 		}
+		Properties.NetworkInterfaces.add(networkInterface);
 		return this;
 	}
 
@@ -139,17 +141,19 @@ public class Instance implements Componentable{
 		Properties.RamdiskId = ramdiskId;
 	}
 
-	public Instance setSecurityGroupIds(String securityGroupId) {
+	public Instance setSecurityGroupId(String securityGroupId) {
 		if (Properties.SecurityGroupIds == null) {
 			Properties.SecurityGroupIds = new ArrayList<>();
 		}
+		Properties.SecurityGroupIds.add(securityGroupId);
 		return this;
 	}
 
-	public Instance setSecurityGroups(String securityGroup) {
+	public Instance setSecurityGroup(String securityGroup) {
 		if (Properties.SecurityGroups == null) {
 			Properties.SecurityGroups = new ArrayList<>();
 		}
+		Properties.SecurityGroups.add(securityGroup);
 		return this;
 	}
 
@@ -157,20 +161,22 @@ public class Instance implements Componentable{
 		Properties.SourceDestCheck = sourceDestCheck;
 	}
 
-	public Instance setSsmAssociations(String ssmAssociation) {
+	public Instance setSsmAssociation(String ssmAssociation) {
 		if (Properties.SsmAssociations == null) {
 			Properties.SsmAssociations = new ArrayList<>();
 		}
+		Properties.SsmAssociations.add(ssmAssociation);
 		return this;
 	}
 
 	public void setSubnetId(String subnetId) {
 		Properties.SubnetId = subnetId;
 	}
-	public Instance setTags(String tags) {
+	public Instance setTag(String tag) {
 		if (Properties.Tags == null) {
 			Properties.Tags = new ArrayList<>();
 		}
+		Properties.Tags.add(tag);
 		return this;
 	}
 	public void setTenancy(String tenancy) {
