@@ -1,4 +1,4 @@
-package ec2;
+package ec2.instance;
 
 import resource.Resource;
 import resource.Tagable;

@@ -1,4 +1,4 @@
-package ec2;
+package ec2.instance;
 
 import java.util.ArrayList;
 import java.util.List;
