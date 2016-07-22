@@ -49,7 +49,7 @@ final class Subnet extends Component{
 		Properties.MapPublicIpOnLaunch = mapPublicIpOnLaunch;
 	}
 	
-	public Subnet setTags(String tag) {
+	public Subnet addTags(String tag) {
 		if (Properties.Tags == null) {
 			Properties.Tags = new ArrayList<>(); 
 		}

@@ -42,8 +42,8 @@ public class VPCS extends Resource implements Tagable {
 	}
 	
 	@Override
-	public Tagable setTag(String tag) {
-		mVPC.setTag(tag);
+	public Tagable addTag(String tag) {
+		mVPC.addTag(tag);
 		return this;
 	}
 }

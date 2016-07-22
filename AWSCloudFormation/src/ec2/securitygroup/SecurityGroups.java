@@ -58,8 +58,9 @@ public class SecurityGroups extends Resource implements Tagable, EC2{
 		return mSecurityGroup.setSecurityGroupIngress();
 	}
 	
-	public Tagable setTag(String tag) {
-		mSecurityGroup.setTag(tag);
+	@Override
+	public Tagable addTag(String tag) {
+		mSecurityGroup.addTag(tag);
 		return this;
 	}
 	

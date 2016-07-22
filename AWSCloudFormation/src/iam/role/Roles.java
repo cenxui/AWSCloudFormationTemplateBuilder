@@ -1,6 +1,7 @@
 package iam.role;
 
 import iam.Policiable;
+import iam.PolicyArnable;
 import resource.Resource;
 
 /**
@@ -8,7 +9,7 @@ import resource.Resource;
  * @author xenxui
  * 2016/7/22
  */
-public class Roles extends Resource implements Policiable {
+public class Roles extends Resource implements Policiable, PolicyArnable {
 	private final Role mRole;
 
 	private Roles(Role component) {
@@ -31,15 +32,6 @@ public class Roles extends Resource implements Policiable {
 		mRole.setAssumeRolePolicyDocument(assumeRolePolicyDocument);
 	}
 	
-	/**
-	 * set policy arns
-	 * @param managedPolicyArns the policy arns
-	 */
-	
-	public void setManagedPolicyArns(String managedPolicyArns) {
-		mRole.setManagedPolicyArns(managedPolicyArns);
-	}
-	
 	public void setPath(String path) {
 		mRole.setPath(path);
 	}
@@ -54,8 +46,14 @@ public class Roles extends Resource implements Policiable {
 	}
 	
 	@Override
-	public Policiable setPolicy(String policy) {
-		mRole.setPolicies(policy);
+	public Policiable addPolicy(String policy) {
+		mRole.addPolicy(policy);
+		return this;
+	}
+
+	@Override
+	public PolicyArnable addManagedPolicyArn(String managedPolicyArn) {
+		mRole.addManagedPolicyArns(managedPolicyArn);
 		return this;
 	}
 }

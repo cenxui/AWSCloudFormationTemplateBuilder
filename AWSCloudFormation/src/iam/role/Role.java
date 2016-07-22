@@ -18,8 +18,7 @@ final class Role extends Component {
 
 	private class Properties {
 		String AssumeRolePolicyDocument;
-		@SuppressWarnings("unused")
-		String ManagedPolicyArns;
+		List<String> ManagedPolicyArns;
 		@SuppressWarnings("unused")
 		String Path;
 		List<String> Policies;
@@ -31,15 +30,19 @@ final class Role extends Component {
 		Properties.AssumeRolePolicyDocument = assumeRolePolicyDocument;
 	}
 	
-	public void setManagedPolicyArns(String managedPolicyArns) {
-		Properties.ManagedPolicyArns = managedPolicyArns;
+	public Role addManagedPolicyArns(String managedPolicyArn) {
+		if (Properties.ManagedPolicyArns == null) {
+			Properties.ManagedPolicyArns = new ArrayList<>();
+		}
+		Properties.ManagedPolicyArns.add(managedPolicyArn);
+		return this;
 	}
 	
 	public void setPath(String path) {
 		Properties.Path = path;
 	}
 	
-	public Role setPolicies(String policy) {
+	public Role addPolicy(String policy) {
 		if (Properties.Policies == null) {
 			Properties.Policies = new ArrayList<>();
 		}

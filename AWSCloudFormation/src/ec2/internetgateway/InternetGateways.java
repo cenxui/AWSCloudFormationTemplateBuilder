@@ -23,8 +23,8 @@ public class InternetGateways extends Resource implements Tagable {
 	}
 
 	@Override
-	public Tagable setTag(String tag) {
-		mInternetGateway.setTag(tag);
+	public Tagable addTag(String tag) {
+		mInternetGateway.addTag(tag);
 		return this;
 	}
 

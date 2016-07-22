@@ -46,8 +46,8 @@ public class Subnets extends Resource implements EC2, Tagable {
 	}
 
 	@Override
-	public Tagable setTag(String tag) {
-		mSubnet.setTags(tag);
+	public Tagable addTag(String tag) {
+		mSubnet.addTags(tag);
 		return this;
 	}
 }

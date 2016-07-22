@@ -52,7 +52,7 @@ final class VPC extends Component {
 		Properties.InstanceTenancy = instanceTenancy;
 	}
 	
-	public VPC setTag(String tag) {
+	public VPC addTag(String tag) {
 		if (Properties.Tags == null) {
 			Properties.Tags = new ArrayList<>();
 		}

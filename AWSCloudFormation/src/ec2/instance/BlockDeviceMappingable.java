@@ -6,5 +6,5 @@ package ec2.instance;
  * 2016/7/21
  */
 public interface BlockDeviceMappingable {
-	BlockDeviceMappingable setBlockDeviceMapping(String BlockDeviceMapping);
+	BlockDeviceMappingable addBlockDeviceMapping(String BlockDeviceMapping);
 }

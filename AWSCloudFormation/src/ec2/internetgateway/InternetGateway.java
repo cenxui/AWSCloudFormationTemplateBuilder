@@ -14,7 +14,7 @@ class InternetGateway extends Component {
 		List<String> Tags;
 	}
 	
-	public InternetGateway setTag(String tag) {
+	public InternetGateway addTag(String tag) {
 		if (Properties.Tags == null) {
 			Properties.Tags = new ArrayList<>();
 		}

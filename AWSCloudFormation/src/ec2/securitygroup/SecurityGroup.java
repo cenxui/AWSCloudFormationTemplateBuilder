@@ -60,7 +60,7 @@ final class SecurityGroup extends Component {
 		return inBoundRule;
 	}
 	
-	public final SecurityGroup setTag(String tag) {
+	public final SecurityGroup addTag(String tag) {
 		if (Properties.Tag == null) {
 			Properties.Tag = new ArrayList<>();
 		}

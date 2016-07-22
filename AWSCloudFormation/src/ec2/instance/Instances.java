@@ -32,8 +32,8 @@ public class Instances extends Resource implements Tagable, SsmAssociationable,
 		mInstance.setAvailabilityZone(availabilityZone);
 	}
 
-	public BlockDeviceMappingable setBlockDeviceMapping(String blockDeviceMapping) {
-		mInstance.setBlockDeviceMapping(blockDeviceMapping);
+	public BlockDeviceMappingable addBlockDeviceMapping(String blockDeviceMapping) {
+		mInstance.addBlockDeviceMapping(blockDeviceMapping);
 		return this;
 	}
 
@@ -77,8 +77,8 @@ public class Instances extends Resource implements Tagable, SsmAssociationable,
 		mInstance.setMonitoring(monitoring);
 	}
 
-	public NetworkInterfaceable setNetworkInterface(String networkInterface) {
-		mInstance.setNetworkInterface(networkInterface);
+	public NetworkInterfaceable addNetworkInterface(String networkInterface) {
+		mInstance.addNetworkInterface(networkInterface);
 		return this;
 	}
 
@@ -94,13 +94,13 @@ public class Instances extends Resource implements Tagable, SsmAssociationable,
 		mInstance.setRamdiskId(ramdiskId);
 	}
 
-	public SecurityGroupIdable setSecurityGroupId(String securityGroupId) {
-		mInstance.setSecurityGroupId(securityGroupId);
+	public SecurityGroupIdable addSecurityGroupId(String securityGroupId) {
+		mInstance.addSecurityGroupId(securityGroupId);
 		return this;
 	}
 
-	public SecurityGroupable setSecurityGroup(String securityGroup) {
-		mInstance.setSecurityGroup(securityGroup);
+	public SecurityGroupable addSecurityGroup(String securityGroup) {
+		mInstance.addSecurityGroup(securityGroup);
 		return this;
 	}
 
@@ -108,16 +108,16 @@ public class Instances extends Resource implements Tagable, SsmAssociationable,
 		mInstance.setSourceDestCheck(sourceDestCheck);
 	}
 
-	public SsmAssociationable setSsmAssociation(String ssmAssociation) {
-		mInstance.setSsmAssociation(ssmAssociation);
+	public SsmAssociationable addSsmAssociation(String ssmAssociation) {
+		mInstance.addSsmAssociation(ssmAssociation);
 		return this;
 	}
 
 	public void setSubnetId(String subnetId) {
 		mInstance.setSubnetId(subnetId);
 	}
-	public Tagable setTag(String tags) {
-		mInstance.setTag(tags);
+	public Tagable addTag(String tags) {
+		mInstance.addTag(tags);
 		return this;
 	}
 	public void setTenancy(String tenancy) {

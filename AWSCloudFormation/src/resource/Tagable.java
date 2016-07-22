@@ -1,5 +1,5 @@
 package resource;
 
 public interface Tagable {
-	Tagable setTag(String tag);
+	Tagable addTag(String tag);
 }

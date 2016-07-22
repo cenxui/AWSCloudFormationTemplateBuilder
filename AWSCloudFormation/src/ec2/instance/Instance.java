@@ -78,7 +78,7 @@ public class Instance extends Component {
 		Properties.AvailabilityZone = availabilityZone;
 	}
 
-	public Instance setBlockDeviceMapping(String blockDeviceMapping) {
+	public Instance addBlockDeviceMapping(String blockDeviceMapping) {
 		if (Properties.BlockDeviceMappings == null) {
 			Properties.BlockDeviceMappings = new ArrayList<>();
 		}
@@ -126,7 +126,7 @@ public class Instance extends Component {
 		Properties.Monitoring = monitoring;
 	}
 
-	public Instance setNetworkInterface(String networkInterface) {
+	public Instance addNetworkInterface(String networkInterface) {
 		if (Properties.NetworkInterfaces == null) {
 			Properties.NetworkInterfaces = new ArrayList<>();
 		}
@@ -146,7 +146,7 @@ public class Instance extends Component {
 		Properties.RamdiskId = ramdiskId;
 	}
 
-	public Instance setSecurityGroupId(String securityGroupId) {
+	public Instance addSecurityGroupId(String securityGroupId) {
 		if (Properties.SecurityGroupIds == null) {
 			Properties.SecurityGroupIds = new ArrayList<>();
 		}
@@ -154,7 +154,7 @@ public class Instance extends Component {
 		return this;
 	}
 
-	public Instance setSecurityGroup(String securityGroup) {
+	public Instance addSecurityGroup(String securityGroup) {
 		if (Properties.SecurityGroups == null) {
 			Properties.SecurityGroups = new ArrayList<>();
 		}
@@ -166,7 +166,7 @@ public class Instance extends Component {
 		Properties.SourceDestCheck = sourceDestCheck;
 	}
 
-	public Instance setSsmAssociation(String ssmAssociation) {
+	public Instance addSsmAssociation(String ssmAssociation) {
 		if (Properties.SsmAssociations == null) {
 			Properties.SsmAssociations = new ArrayList<>();
 		}
@@ -177,7 +177,7 @@ public class Instance extends Component {
 	public void setSubnetId(String subnetId) {
 		Properties.SubnetId = subnetId;
 	}
-	public Instance setTag(String tag) {
+	public Instance addTag(String tag) {
 		if (Properties.Tags == null) {
 			Properties.Tags = new ArrayList<>();
 		}

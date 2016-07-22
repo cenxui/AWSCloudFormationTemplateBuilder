@@ -5,5 +5,5 @@ package ec2.instance;
  * 2016/7/21
  */
 public interface SecurityGroupIdable {
-	SecurityGroupIdable setSecurityGroupId(String securityGroupId);
+	SecurityGroupIdable addSecurityGroupId(String securityGroupId);
 }
