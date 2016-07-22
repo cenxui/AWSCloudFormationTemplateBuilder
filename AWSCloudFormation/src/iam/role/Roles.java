@@ -3,6 +3,11 @@ package iam.role;
 import iam.Policiable;
 import resource.Resource;
 
+/**
+ * 
+ * @author xenxui
+ * 2016/7/22
+ */
 public class Roles extends Resource implements Policiable {
 	private final Role mRole;
 

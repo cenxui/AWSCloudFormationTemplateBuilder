@@ -5,10 +5,8 @@ import java.util.List;
 
 import javax.management.RuntimeErrorException;
 
-import com.google.gson.Gson;
-
 import intrinsic.Ref;
-import resource.Componentable;
+import resource.Component;
 
 /**
  * This class is to build the security properties in JSON format
@@ -18,7 +16,7 @@ import resource.Componentable;
  *
  */
 
-final class SecurityGroup implements Componentable {
+final class SecurityGroup extends Component {
 	public static final String TCP = "tcp";
 	
 	public final String Type = "AWS::EC2::SecurityGroup";
@@ -36,8 +34,7 @@ final class SecurityGroup implements Componentable {
 		if (Properties.VpcId != null) {
 			throw new RuntimeErrorException(null, "You can only either setVpcId or setVpcRf for once");
 		}
-		Properties.VpcId = new Ref();
-		((Ref)Properties.VpcId).setRef(rf);
+		Properties.VpcId = new Ref(rf);
 	}
 	
 	public final void setGroupDescription(String description) {
@@ -80,7 +77,7 @@ final class SecurityGroup implements Componentable {
 			throw new RuntimeErrorException(null, "VpcId can not be null");
 		}
 		
-		return new Gson().toJson(this);
+		return super.toComponent();
 	}
 	
 	private class Properties {

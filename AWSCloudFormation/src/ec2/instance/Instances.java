@@ -3,6 +3,11 @@ package ec2.instance;
 import resource.Resource;
 import resource.Tagable;
 
+/**
+ * 
+ * @author xenxui
+ * 2016/7/21
+ */
 public class Instances extends Resource implements Tagable, SsmAssociationable,
 	SecurityGroupable, SecurityGroupIdable, NetworkInterfaceable,
 	BlockDeviceMappingable {

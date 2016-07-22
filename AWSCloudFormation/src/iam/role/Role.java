@@ -5,11 +5,14 @@ import java.util.List;
 
 import javax.management.RuntimeErrorException;
 
-import com.google.gson.Gson;
+import resource.Component;
 
-import resource.Componentable;
-
-class Role implements Componentable{
+/**
+ * 
+ * @author xenxui
+ * 2016/7/22
+ */
+final class Role extends Component {
 	public final String Type = "AWS::IAM::Role";
 	private final Properties Properties = new Properties();
 
@@ -53,6 +56,6 @@ class Role implements Componentable{
 		if (Properties.AssumeRolePolicyDocument == null) {
 			throw new RuntimeErrorException(null, "AssumeRolePolicyDocument can not be null");
 		}
-		return new Gson().toJson(this);
+		return super.toComponent();
 	}
 }

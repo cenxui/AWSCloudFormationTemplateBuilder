@@ -4,13 +4,12 @@ import java.util.List;
 
 import javax.management.RuntimeErrorException;
 
-import com.google.gson.Gson;
-
 import intrinsic.Ref;
-import resource.Componentable;
+import resource.Component;
 
-class Subnet implements Componentable {
+final class Subnet extends Component{
 	public final String Type = "AWS::EC2::Subnet";
+	
 	private final Properties Properties = new Properties();
 
 	private class Properties {
@@ -35,8 +34,7 @@ class Subnet implements Componentable {
 		if (Properties.VpcId != null) {
 			throw new RuntimeErrorException(null, "You can only either setVpcId or setVpcRf for once");
 		}
-		Properties.VpcId = new Ref();
-		((Ref)Properties.VpcId).setRef(rf);
+		Properties.VpcId = new Ref(rf);
 	}
 	
 	public void setAvailabilityZone(String availabilityZone) {
@@ -57,10 +55,5 @@ class Subnet implements Componentable {
 		}
 		Properties.Tags.add(tag);
 		return this;
-	}
-
-	@Override
-	public String toComponent() {
-		return new Gson().toJson(this);
 	}	
 }

@@ -2,9 +2,9 @@ package iam.user;
 
 import java.util.List;
 
-import resource.Componentable;
+import resource.Component;
 
-public class User implements Componentable {
+public class User extends Component {
 	public String Type = "AWS::IAM::User";
 	private Properties Properties = new Properties();
 	
@@ -17,11 +17,6 @@ public class User implements Componentable {
 		String UserName;
 	}
 
-	@Override
-	public String toComponent() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 //	  "": ,
 //	  "Properties": {

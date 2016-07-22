@@ -3,6 +3,11 @@ package ec2.vpc;
 import resource.Resource;
 import resource.Tagable;
 
+/**
+ * 
+ * @author xenxui
+ * 2016/7/22
+ */
 public class VPCS extends Resource implements Tagable {	
 	public static final String DEFAULT = "default";
 	public static final String DEDICATE = "dedicate";

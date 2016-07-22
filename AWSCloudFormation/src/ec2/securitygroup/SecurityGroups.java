@@ -1,5 +1,6 @@
 package ec2.securitygroup;
 
+import ec2.EC2;
 import ec2.securitygroup.SecurityGroup.InBoundRule;
 import ec2.securitygroup.SecurityGroup.OutBoundRule;
 import resource.Resource;
@@ -11,7 +12,7 @@ import resource.Tagable;
  * 2016/7/20
  */
 
-public class SecurityGroups extends Resource implements Tagable{
+public class SecurityGroups extends Resource implements Tagable, EC2{
 	private final SecurityGroup mSecurityGroup;
 	
 	private SecurityGroups(SecurityGroup component) {
@@ -66,6 +67,7 @@ public class SecurityGroups extends Resource implements Tagable{
 	 * set the vpc with its id
 	 * @param id
 	 */
+	@Override
 	public void setVpcId(String id) {
 		mSecurityGroup.setVpcId(id);
 	}
@@ -74,6 +76,7 @@ public class SecurityGroups extends Resource implements Tagable{
 	 * set the vpc with the reference type
 	 * @param rf
 	 */
+	@Override
 	public void setVpcRf(String rf) {
 		mSecurityGroup.setVpcRf(rf);
 	}

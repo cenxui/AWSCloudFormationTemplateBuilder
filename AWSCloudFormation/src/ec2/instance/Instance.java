@@ -7,9 +7,14 @@ import javax.management.RuntimeErrorException;
 
 import com.google.gson.Gson;
 
-import resource.Componentable;
+import resource.Component;
 
-public class Instance implements Componentable{
+/**
+ * 
+ * @author xenxui
+ * 2016/7/21
+ */
+public class Instance extends Component {
 	
 	public final String Type = "AWS::EC2::Instance";
 	

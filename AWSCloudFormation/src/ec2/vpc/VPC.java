@@ -5,19 +5,17 @@ import java.util.List;
 
 import javax.management.RuntimeErrorException;
 
-import com.google.gson.Gson;
+import resource.Component;
 
-import resource.Componentable;
+/**
+ * 
+ * @author xenxui
+ * 2016/7/22
+ */
 
-final class VPC implements Componentable {
+final class VPC extends Component {
 	public final String Type = "AWS::EC2::VPC";
 	private final Properties Properties = new Properties();
-	
-	@Override
-	public String toComponent() {
-		return new Gson().toJson(this);
-	}
-	
 	
 	private class Properties {
 		@SuppressWarnings("unused")
