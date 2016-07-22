@@ -25,6 +25,6 @@ public class Resource implements Componentable{
 
 	@Override
 	public String toComponent() {
-		return "{\"Resources\":{\"" + mResourceName + "\":" + mComponentable.toComponent() + "}}";
+		return "{\"" + mResourceName + "\":" + mComponentable.toComponent() + "}";
 	}
 }

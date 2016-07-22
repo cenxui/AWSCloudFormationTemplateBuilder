@@ -209,16 +209,16 @@ final class SecurityGroup implements Componentable {
 		}
 		
 		public InBoundRule setDefaultHttp() {
-			IpProtocol = TCP;
-			FromPort = 80;
-			ToPort = 80;
+			setIpProtocol(TCP);
+			setFromPort(80);
+			setToPort(80);
 			return this;
 		}
 		
 		public InBoundRule setDefaultHttps() {
-			IpProtocol = TCP;
-			FromPort = 443;
-			ToPort = 443;
+			setIpProtocol(TCP);
+			setFromPort(443);
+			setToPort(443);
 			return this;
 		}
 			
@@ -245,7 +245,7 @@ final class SecurityGroup implements Componentable {
 		}
 		
 		public InBoundRule setIpProtocol(String ipProtocol) {
-			IpProtocol = ipProtocol;
+			IpProtocol = ipProtocol.toLowerCase();
 			return this;
 		}
 		
