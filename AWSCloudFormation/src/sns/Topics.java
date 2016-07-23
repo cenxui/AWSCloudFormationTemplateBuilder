@@ -7,10 +7,10 @@ import resource.Resource;
  * @author xenxui
  * 2016/7/23
  */
-public class SNSS extends Resource implements Subscriptionable {
-	private final SNS mSns;
+public class Topics extends Resource implements Subscriptionable {
+	private final Topic mSns;
 
-	private SNSS(SNS component) {
+	private Topics(Topic component) {
 		super(component);
 		mSns = component;
 	}
@@ -20,9 +20,9 @@ public class SNSS extends Resource implements Subscriptionable {
 	 * 
 	 * @return the SNSS instance
 	 */
-	public static SNSS getSNS() {
-		SNS sns = new SNS();
-		SNSS snss = new SNSS(sns);
+	public static Topics getTopic() {
+		Topic sns = new Topic();
+		Topics snss = new Topics(sns);
 		return snss;
 	}
 	

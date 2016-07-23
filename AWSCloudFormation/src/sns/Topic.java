@@ -5,7 +5,7 @@ import java.util.List;
 
 import resource.Component;
 
-public class SNS extends Component {
+class Topic extends Component {
 	public final String Type = "AWS::SNS::Topic";
 	
 	private final Properties Properties = new Properties();
@@ -22,7 +22,7 @@ public class SNS extends Component {
 		Properties.DisplayName =  displayName;
 	}
 	
-	public SNS addSubscription(String subscription) {
+	public Topic addSubscription(String subscription) {
 		if (Properties.Subscription == null) {
 			Properties.Subscription  = new ArrayList<>();
 		}
