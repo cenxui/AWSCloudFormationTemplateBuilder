@@ -17,6 +17,12 @@ public class Roles extends Resource implements Policiable, PolicyArnable {
 		mRole = component;
 	}
 	
+	/**
+	 * It cannot be instantiated. So use static method
+	 * getRole to get instance
+	 * @return
+	 */
+	
 	public static Roles getRole() {
 		final Role role = new Role();
 		final Roles roles = new Roles(role);
