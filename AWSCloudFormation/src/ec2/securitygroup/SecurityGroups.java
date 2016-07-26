@@ -21,6 +21,7 @@ public class SecurityGroups extends Resource implements Tagable, EC2{
 	}
 	
 	/**
+	 * It cannot be instantiated. So use static method
 	 * get the security group, we can not new instance, 
 	 * call this method instead.
 	 * @return
