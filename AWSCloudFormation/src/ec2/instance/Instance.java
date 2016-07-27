@@ -14,7 +14,7 @@ import resource.Component;
  * @author xenxui
  * 2016/7/21
  */
-public class Instance extends Component {
+class Instance extends Component {
 	
 	public final String Type = "AWS::EC2::Instance";
 	
